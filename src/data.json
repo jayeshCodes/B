@@ -1,0 +1,330 @@
+{
+  "leads": [
+    {
+      "id": 1,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 2,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 3,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 4,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 5,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 6,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 7,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 8,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called"
+    },
+    {
+      "id": 9,
+      "date": "2022-11-30",
+      "name": "John Brown",
+      "mobile": 8546235871,
+      "email": "johnbrown@gmail.com",
+      "address": "Pune",
+      "lead-source": "Facebook",
+      "property": "New Estate",
+      "property-type": "1bhk",
+      "budget": "50L",
+      "status": "incoming",
+      "calender": "2022-12-12",
+      "remarks": "Yet to be called. gdfgsdfjh hgfwegf egyuweguiesd dshfgsdjhfjhsd wegfuywegfv vfewfuywegf  hfvegfvf vfegfevfjhv"
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "address": "Pune",
+      "property": "New Estate",
+      "property-types": "1bhk",
+      "amenities": ["gym", "parking", "lift"],
+      "leads": ["john", "nikhil"]
+    },
+    {
+      "id": 2,
+      "address": "Pune",
+      "property": "Old Estate",
+      "property-types": "1bhk",
+      "amenities": ["parking", "lift"],
+      "leads": ["yash", "kartik"]
+    },
+    {
+      "id": 3,
+      "address": "Pune",
+      "property": "New Estate",
+      "property-types": "2bhk",
+      "amenities": ["gym", "parking", "lift", "park"],
+      "leads": ["aman", "megha", "sonu"]
+    }
+  ],
+  "activities": [
+    {
+      "date": "2022-11-30",
+      "status": "Call Rescheduled",
+      "activity_by": "Deepak",
+      "reminder_date": "2022-12-03",
+      "remark": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "date": "2022-11-30",
+      "status": "Call Rescheduled",
+      "activity_by": "Deepak",
+      "reminder_date": "2022-12-03",
+      "remark": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "date": "2022-11-30",
+      "status": "Call Rescheduled",
+      "activity_by": "Deepak",
+      "reminder_date": "2022-12-03",
+      "remark": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "date": "2022-11-30",
+      "status": "Call Rescheduled",
+      "activity_by": "Deepak",
+      "reminder_date": "2022-12-03",
+      "remark": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "date": "2022-11-30",
+      "status": "Call Rescheduled",
+      "activity_by": "Deepak",
+      "reminder_date": "2022-12-03",
+      "remark": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "date": "2022-11-30",
+      "status": "Call Rescheduled",
+      "activity_by": "Deepak",
+      "reminder_date": "2022-12-03",
+      "remark": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ],
+  "facebook": [
+    {
+      "id": 1,
+      "mapper_name": "Nov Jade Campaign",
+      "user_id": 123456,
+      "account_name": "KN Negi",
+      "page_id": 789456,
+      "page_name": "Jade Residencies",
+      "form_id": 456123,
+      "form_name": "Nov Carnival Campaign",
+      "subscribed": true
+    },
+    {
+      "id": 2,
+      "mapper_name": "Primecity 20Dec",
+      "user_id": 741852,
+      "account_name": "KN Negi",
+      "page_id": 963852,
+      "page_name": "Prime City Properties",
+      "form_id": 258789,
+      "form_name": "PrimeCity New Year Campaign",
+      "subscribed": true
+    }
+  ],
+  "employees": [
+    {
+      "id": 123456789123,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 100,
+      "converted": 40,
+      "pending": 40,
+      "dropped": 20,
+      "conversion_rate": 40,
+      "status": "Inactive"
+    },
+    {
+      "id": 123456789124,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 200,
+      "converted": 80,
+      "pending": 80,
+      "dropped": 20,
+      "conversion_rate": 40,
+      "status": "Active"
+    },
+    {
+      "id": 123456789125,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 100,
+      "converted": 40,
+      "pending": 40,
+      "dropped": 20,
+      "conversion_rate": 40,
+      "status": "Active"
+    },
+    {
+      "id": 123456789126,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 100,
+      "converted": 40,
+      "pending": 57,
+      "dropped": 20,
+      "conversion_rate": 40,
+      "status": "Inactive"
+    },
+    {
+      "id": 123456789127,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 100,
+      "converted": 50,
+      "pending": 40,
+      "dropped": 20,
+      "conversion_rate": 50,
+      "status": "Inactive"
+    },
+    {
+      "id": 123456789128,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 100,
+      "converted": 60,
+      "pending": 40,
+      "dropped": 20,
+      "conversion_rate": 60,
+      "status": "Active"
+    },
+    {
+      "id": 123456789129,
+      "name": "Yash Singalkar",
+      "email": "yashsingalkar@gmail.com",
+      "phone": "8805684639",
+      "total_leads": 100,
+      "converted": 40,
+      "pending": 20,
+      "dropped": 20,
+      "conversion_rate": 40,
+      "status": "Active"
+    }
+  ],
+  "me": {
+    "id": 123456789123,
+    "group": "admin",
+    "firstName": "Yash",
+    "lastName": "Singalkar",
+    "reraId": "A123456789",
+    "phone": "8805684639",
+    "email": "johnbrown@gmail.com",
+    "companyName": "Pinaka Digital Solutions",
+    "companyAddress": "A-1, 2nd Floor, Pinaka Digital Solutions, Near KFC, Pune, Maharashtra"
+  }
+}

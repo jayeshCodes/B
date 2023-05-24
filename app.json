@@ -1,0 +1,55 @@
+{
+  "expo": {
+    "name": "Brahmastra",
+    "slug": "brahmastra",
+    "version": "1.0.12",
+    "orientation": "portrait",
+    "icon": "./assets/brahmastra-icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "brahmastra",
+    "splash": {
+      "image": "./assets/custom-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.pinaka.brahmastra",
+      "versionCode": 13,
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/custom-adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4c3766c5-3b86-419f-8ea8-661694d6254a"
+      }
+    },
+    "owner": "brahmastra",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/favicon-96x96.png",
+          "color": "#ffffff"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "28616279159",
+    "project_id": "brahmastra-mobile-app",
+    "storage_bucket": "brahmastra-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28616279159:android:04781499cf719f9ef8b272",
+        "android_client_info": {
+          "package_name": "com.pinaka.brahmastra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28616279159-7db0p20un1s4vgcs8vucugu7856pqkvn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3v6BfQRgIqIzNwB1jL8KwqTZchyKC-P0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28616279159-7db0p20un1s4vgcs8vucugu7856pqkvn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
