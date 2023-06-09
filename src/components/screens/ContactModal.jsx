@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Modal, TouchableNativeFeedback, Platform, Pressable, Alert, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, Modal, TouchableHighlight, Platform, Pressable, Alert, ToastAndroid } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import * as Linking from 'expo-linking';
 import React from 'react'
@@ -65,9 +65,9 @@ const ContactModal = ({ modalVisible, closeModal, lead }) => {
                         style={styles.modalContainer}
                         onPress={() => null}
                     >
-                        <TouchableNativeFeedback
+                        <TouchableHighlight
                             onPress={() => openDialer()}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                         >
                             <View style={styles.modalRow}>
                                 <Text style={styles.modalRowText}>Call</Text>
@@ -77,10 +77,10 @@ const ContactModal = ({ modalVisible, closeModal, lead }) => {
                                     size={26}
                                 />
                             </View>
-                        </TouchableNativeFeedback>
-                        <TouchableNativeFeedback
+                        </TouchableHighlight>
+                        <TouchableHighlight
                             onPress={() => openWhatsApp()}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                         >
                             <View style={styles.modalRow}>
                                 <Text style={styles.modalRowText}>WhatsApp</Text>
@@ -90,10 +90,10 @@ const ContactModal = ({ modalVisible, closeModal, lead }) => {
                                     size={26}
                                 />
                             </View>
-                        </TouchableNativeFeedback>
-                        <TouchableNativeFeedback
+                        </TouchableHighlight>
+                        <TouchableHighlight
                             onPress={() => sendEmail()}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                         >
                             <View style={styles.modalRow}>
                                 <Text style={styles.modalRowText}>Email</Text>
@@ -103,7 +103,7 @@ const ContactModal = ({ modalVisible, closeModal, lead }) => {
                                     size={26}
                                 />
                             </View>
-                        </TouchableNativeFeedback>
+                        </TouchableHighlight>
                     </Pressable>
                 </Pressable>
             </Modal>

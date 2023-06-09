@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable, TouchableNativeFeedback, TextInput, FlatList, Keyboard, Platform, ToastAndroid, RefreshControl } from 'react-native'
+import { View, Text, StyleSheet, Pressable, TouchableHighlight, TextInput, FlatList, Keyboard, Platform, ToastAndroid, RefreshControl } from 'react-native'
 import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Feather } from '@expo/vector-icons'
 import { Ionicons, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
@@ -195,15 +195,15 @@ const Leads = ({ navigation }) => {
             </Pressable>}
           </Pressable>
           <View style={{ borderRadius: 100, overflow: 'hidden' }}>
-            <TouchableNativeFeedback
+            <TouchableHighlight
               onPress={() => navigation.navigate('Filters', { filters: filters })}
-              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+              background={Platform.OS === 'android' ? TouchableHighlight : TouchableHighlight}
               useForeground={true}
             >
               <View style={[styles.filterButton, { backgroundColor: isFilterOn() ? styleConstants.primaryColor : '#ffffff' }]}>
                 <Ionicons name="filter" size={24} color={isFilterOn() ? '#ffffff' : '#000000'} />
               </View>
-            </TouchableNativeFeedback>
+            </TouchableHighlight>
           </View>
         </View>
         {isLoading ? <SplashScreen /> :
@@ -222,22 +222,22 @@ const Leads = ({ navigation }) => {
                 return (
                   <>
                     <View style={styles.cardContainer}>
-                      <TouchableNativeFeedback
+                      <TouchableHighlight
                         onPress={() => navigation.navigate('LeadProfileNavigator', { data: item })}
                         useForeground={true}
                       >
                         <View>
                           <View style={styles.cardHeading}>
                             <Text style={styles.cardHeadingText}>{item.full_name}</Text>
-                            <TouchableNativeFeedback
+                            <TouchableHighlight
                               onPress={() => setContactModalLead(item)}
-                              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                              background={Platform.OS === 'android' ? TouchableHighlight : TouchableHighlight}
                               useForeground={true}
                             >
                               <View style={styles.moreButton}>
                                 <MaterialIcons name="call" size={20} color="#ffffff" />
                               </View>
-                            </TouchableNativeFeedback>
+                            </TouchableHighlight>
                           </View>
                           <View style={styles.cardBody}>
                             <View style={styles.cardBodyRow}>
@@ -270,17 +270,17 @@ const Leads = ({ navigation }) => {
                             </View>}
                           </View>
                         </View>
-                      </TouchableNativeFeedback >
-                      <TouchableNativeFeedback
+                      </TouchableHighlight >
+                      <TouchableHighlight
                         onPress={() => setEditModalLead(item)}
-                        background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                        background={Platform.OS === 'android' ? TouchableHighlight : TouchableHighlight}
                       >
                         <View style={styles.editButton}>
                           <Text>Update</Text>
                           <View style={styles.emptySpace}></View>
                           <Feather name="edit" size={16} color="black" />
                         </View>
-                      </TouchableNativeFeedback>
+                      </TouchableHighlight>
                     </View >
                   </>
                 )
@@ -301,6 +301,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 50,
     marginBottom: 10,
+    marginTop:5
   },
   searchBarContainer: {
     flexDirection: 'row',

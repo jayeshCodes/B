@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, ScrollView, Image, TouchableNativeFeedback, Platform, KeyboardAvoidingView, Alert, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, TextInput, ScrollView, Image, TouchableHighlight, Platform, KeyboardAvoidingView, Alert, ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import { styleConstants } from '../../services/Constants'
 import { AdminSetUserPasswordCommand } from "@aws-sdk/client-cognito-identity-provider"
@@ -78,14 +78,14 @@ const TemporaryPassword = ({ navigation, route }) => {
           />
         </View>
         <View style={styles.buttonOuter}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => save()}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={styles.buttonContainer}>
               <Text style={{ color: '#ffffff', fontSize: 18, fontWeight: 'bold' }}>Save</Text>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
       </View>
       {/* </KeyboardAvoidingView> */}

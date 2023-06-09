@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Modal, TouchableNativeFeedback, Platform, Pressable, ScrollView, KeyboardAvoidingView, TextInput, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, Modal, TouchableHighlight, Platform, Pressable, ScrollView, KeyboardAvoidingView, TextInput, ToastAndroid } from 'react-native'
 import React, { useContext, useState } from 'react'
 import { statusArray, styleConstants, reminderStatusArray } from '../../services/Constants';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -114,9 +114,9 @@ const Edit = ({ lead, modalVisible, closeModal }) => {
                             <View style={styles.modalBodyRow}>
                                 <Text style={{ marginBottom: 5 }}>Activity Date</Text>
                                 <View style={styles.buttonOuter}>
-                                    <TouchableNativeFeedback
+                                    <TouchableHighlight
                                         onPress={() => showDatePicker('activityDatePicker')}
-                                        background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                        background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                     >
                                         <View style={styles.button}>
                                             <DateTimePickerModal
@@ -133,15 +133,15 @@ const Edit = ({ lead, modalVisible, closeModal }) => {
                                                 color='#000000'
                                                 size={20} />
                                         </View>
-                                    </TouchableNativeFeedback>
+                                    </TouchableHighlight>
                                 </View>
                             </View>
                             {reminderStatusArray.includes(selectedItem) && <View style={styles.modalBodyRow}>
                                 <Text style={{ marginBottom: 5 }}>Reminder Date</Text>
                                 <View style={styles.buttonOuter}>
-                                    <TouchableNativeFeedback
+                                    <TouchableHighlight
                                         onPress={() => showDatePicker('reminderDatePicker')}
-                                        background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                        background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                     >
                                         <View style={styles.button}>
                                             <DateTimePickerModal
@@ -158,7 +158,7 @@ const Edit = ({ lead, modalVisible, closeModal }) => {
                                                 color='#000000'
                                                 size={20} />
                                         </View>
-                                    </TouchableNativeFeedback>
+                                    </TouchableHighlight>
                                 </View>
                             </View>}
                             <View style={styles.modalBodyRow}>
@@ -174,14 +174,14 @@ const Edit = ({ lead, modalVisible, closeModal }) => {
                             </View>
                         </ScrollView>
                         <View style={styles.modalFooter}>
-                            <TouchableNativeFeedback
+                            <TouchableHighlight
                                 onPress={() => handleSave()}
-                                background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}
+                                background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : ''}
                             >
                                 <View style={styles.buttonContainer}>
                                     <Text style={styles.saveButtonText}>Save</Text>
                                 </View>
-                            </TouchableNativeFeedback>
+                            </TouchableHighlight>
                         </View>
                     </Pressable>
                     {/* </KeyboardAvoidingView> */}

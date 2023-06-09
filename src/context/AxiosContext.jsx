@@ -14,7 +14,8 @@ const AxiosContext = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const isLoggedInCallback = (value) => {
-    setIsLoggedIn(value);
+    // setIsLoggedIn(true); 
+       setIsLoggedIn(value);
   }
 
   // useEffect(() => {
@@ -41,7 +42,8 @@ const AxiosContext = (props) => {
           config.headers.Authorization = `Bearer ${idToken}`;
         } else {
           await SecureStore.deleteItemAsync('idToken')
-          setIsLoggedIn(false);
+          // setIsLoggedIn(true); 
+                   setIsLoggedIn(false);
         }
         return config;
       },
@@ -77,7 +79,8 @@ const AxiosContext = (props) => {
             await SecureStore.deleteItemAsync('idToken');
             await SecureStore.deleteItemAsync('expoToken');
               // console.log('deleted token');
-            setIsLoggedIn(false);
+            // setIsLoggedIn(true); 
+                       setIsLoggedIn(false);
             ToastAndroid.show('Session expired', ToastAndroid.SHORT);
             // console.log('logged out');
           }

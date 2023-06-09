@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableNativeFeedback, View, ScrollView, ToastAndroid, Switch } from 'react-native'
+import { StyleSheet, Text, TouchableHighlight, View, ScrollView, Switch } from 'react-native'
 import React, { useContext } from 'react'
 import { styleConstants } from '../../services/Constants'
 import * as SecureStore from 'expo-secure-store';
@@ -6,6 +6,8 @@ import { axiosContext } from '../../context/AxiosContext';
 import { contextData } from '../../context/DataContext';
 import { api } from '../../services/Axios';
 import { REACT_APP_API_URL } from "@env";
+import { RNCToast } from 'react-native-toast';
+
 
 const MyProfile = () => {
 
@@ -13,22 +15,25 @@ const MyProfile = () => {
   const { group, profile, profileCallback } = useContext(contextData);
 
   const logout = async () => {
-    try {
-      const token = await SecureStore.getItemAsync('expoToken');
-      const response = await api.post(`${process.env.REACT_APP_API_URL}/remove_expo_token`, { token: token })
-      if (response.data.message === 'success') {
-        await SecureStore.deleteItemAsync('idToken');
-        await SecureStore.deleteItemAsync('expoToken');
-        isLoggedInCallback(false);
+    // if (profile) {
+
+      try {
+        const token = await SecureStore.getItemAsync('expoToken');
+        const response = await api.post(`${process.env.REACT_APP_API_URL}/remove_expo_token`, { token: token })
+        if (response.data.message === 'success') {
+          await SecureStore.deleteItemAsync('idToken');
+          await SecureStore.deleteItemAsync('expoToken');
+          isLoggedInCallback(false);
+        }
+        // console.log(response.data);
+      } catch (error) {
+        // console.log(error);
+        RNCToast.show('Something went wrong, please try again later!', RNCToast.SHORT);
       }
-      // console.log(response.data);
-    } catch (error) {
-      // console.log(error);
-      ToastAndroid.show('Something went wrong, please try again later!', ToastAndroid.SHORT);
-    }
+    // }
   }
 
-  
+
 
   const switchEmail = () => {
     api.get(`${process.env.REACT_APP_API_URL}/toggle_email`)
@@ -38,6 +43,7 @@ const MyProfile = () => {
       })
       .catch((error) => {
         // console.log(error);
+        RNCToast.show('Something went wrong, please try again later!', RNCToast.SHORT);
       })
   }
 
@@ -85,14 +91,15 @@ const MyProfile = () => {
             />
           </View>}
         <View style={styles.logoutContainer}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => logout()}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
+            style={{ width: "100%", height: "100%", borderRadius: 10 }}
           >
             <View style={styles.logoutInner}>
               <Text style={styles.logoutText}>Logout</Text>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
       </ScrollView>
     </View>

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableNativeFeedback, ScrollView, Platform } from 'react-native'
+import { StyleSheet, Text, View, TouchableHighlight, ScrollView, Platform } from 'react-native'
 import React, { useState, useContext, useEffect } from 'react'
 import { styleConstants } from '../../services/Constants'
 import { Feather, MaterialIcons } from '@expo/vector-icons'
@@ -72,15 +72,15 @@ const About = ({ lead }) => {
             <View style={styles.cardContainer}>
               <View style={styles.cardHeading}>
                 <Text style={styles.cardHeadingText}>Next Reminder</Text>
-                <TouchableNativeFeedback
+                <TouchableHighlight
                   onPress={() => setModalVisible(true)}
-                  background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                  background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                   useForeground={true}
                 >
                   <View style={styles.moreButton}>
                     <MaterialIcons name="call" size={20} color="#ffffff" />
                   </View>
-                </TouchableNativeFeedback>
+                </TouchableHighlight>
               </View>
               <View style={styles.cardBody}>
                 <View style={styles.cardBodyRow}>
@@ -96,16 +96,16 @@ const About = ({ lead }) => {
                   <Text style={styles.cardBodyRowText}>{leadState.remarks}</Text>
                 </View>
               </View>
-              <TouchableNativeFeedback
+              <TouchableHighlight
                 onPress={() => setEditModalVisible(true)}
-                background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
               >
                 <View style={styles.editButton}>
                   <Text>Update</Text>
                   <View style={styles.emptySpace}></View>
                   <Feather name="edit" size={16} color="black" />
                 </View>
-              </TouchableNativeFeedback>
+              </TouchableHighlight>
             </View>
             <View style={styles.cardContainer}>
               <View style={styles.cardHeading}>

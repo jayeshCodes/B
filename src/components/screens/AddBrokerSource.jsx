@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableNativeFeedback, Platform, ScrollView, TextInput, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, TouchableHighlight, Platform, ScrollView, TextInput, ToastAndroid } from 'react-native'
 import React, { useState, useEffect, useContext } from 'react'
 import { styleConstants } from '../../services/Constants'
 import { contextData } from '../../context/DataContext'
@@ -333,24 +333,24 @@ const AddBrokerSource = ({navigation}) => {
                         </View>}
                     </View>
                     <View style={[styles.buttonOuter, { marginBottom: 10, marginTop: 20 }]}>
-                        <TouchableNativeFeedback
+                        <TouchableHighlight
                             onPress={() => handleReset()}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                         >
                             <View style={styles.buttonContainer}>
                                 <Text style={styles.buttonText}>Reset</Text>
                             </View>
-                        </TouchableNativeFeedback>
+                        </TouchableHighlight>
                     </View>
                     <View style={[styles.buttonOuter, { marginBottom: 40 }]}>
-                        <TouchableNativeFeedback
+                        <TouchableHighlight
                             onPress={() => handleSave()}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                         >
                             <View style={styles.buttonContainer}>
                                 <Text style={styles.buttonText}>Save</Text>
                             </View>
-                        </TouchableNativeFeedback>
+                        </TouchableHighlight>
                     </View>
                 </ScrollView>}
         </View>

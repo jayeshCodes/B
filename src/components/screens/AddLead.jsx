@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableNativeFeedback, Platform, ScrollView, TextInput, ToastAndroid } from 'react-native'
+import { StyleSheet, Text, View, TouchableHighlight, Platform, ScrollView, TextInput, ToastAndroid } from 'react-native'
 import React, { useState, useEffect, useContext } from 'react'
 import { dealTypesArray, propertyTypesArray, statusArray, reminderStatusArray, styleConstants } from '../../services/Constants'
 import DropDown from '../utilities/DropDown'
@@ -346,14 +346,14 @@ const AddLead = ({ navigation, route }) => {
               value={credentials.interestedProperties}
             /> */}
             <View style={styles.mainButtonContainer}>
-              <TouchableNativeFeedback
+              <TouchableHighlight
                 onPress={() => navigation.navigate('Search Screen', { initialValue: credentials.interestedProperties })}
-                background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
               >
                 <View style={styles.mainButton}>
                   <Text style={{ flex: 1, textAlignVertical: 'center' }} ellipsizeMode='tail' numberOfLines={1}>{credentials.interestedProperties}</Text>
                 </View>
-              </TouchableNativeFeedback>
+              </TouchableHighlight>
             </View>
           </View>
           <View style={styles.rowContainer}>
@@ -398,9 +398,9 @@ const AddLead = ({ navigation, route }) => {
           <View style={styles.rowContainer}>
             <Text style={styles.rowTitle}>Next Reminder Date {reminderStatusArray.includes(credentials.status) && <Text style={{ color: 'red' }}>*</Text>}</Text>
             <View style={styles.dateButtonOuter}>
-              <TouchableNativeFeedback
+              <TouchableHighlight
                 onPress={() => reminderStatusArray.includes(credentials.status) ? setShow(true) : null}
-                background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
               >
                 <View style={styles.button}>
                   <DateTimePickerModal
@@ -419,7 +419,7 @@ const AddLead = ({ navigation, route }) => {
                     onPress={credentials.reminderDate !== '' ? () => { setCredentials((credentials) => ({ ...credentials, reminderDate: '' })) } : null}
                   />
                 </View>
-              </TouchableNativeFeedback>
+              </TouchableHighlight>
             </View>
             {alert.reminderDate && <View>
               <Text style={styles.warningText}>{alert.reminderDate}</Text>
@@ -450,24 +450,24 @@ const AddLead = ({ navigation, route }) => {
             />
           </View>}
           <View style={[styles.buttonOuter, { marginBottom: 10, marginTop: 20 }]}>
-            <TouchableNativeFeedback
+            <TouchableHighlight
               onPress={() => handleReset()}
-              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+              background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
             >
               <View style={styles.buttonContainer}>
                 <Text style={styles.buttonText}>Reset</Text>
               </View>
-            </TouchableNativeFeedback>
+            </TouchableHighlight>
           </View>
           <View style={[styles.buttonOuter, { marginBottom: 40 }]}>
-            <TouchableNativeFeedback
+            <TouchableHighlight
               onPress={() => handleSave()}
-              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+              background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
             >
               <View style={styles.buttonContainer}>
                 <Text style={styles.buttonText}>Save</Text>
               </View>
-            </TouchableNativeFeedback>
+            </TouchableHighlight>
           </View>
         </ScrollView>}
     </View>

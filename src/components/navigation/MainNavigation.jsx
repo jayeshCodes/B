@@ -1,4 +1,4 @@
-import { View, StyleSheet, Platform, TouchableNativeFeedback } from 'react-native';
+import { View, StyleSheet, Platform, TouchableHighlight } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -45,14 +45,14 @@ const MainNavigation = () => {
                                 headerRight: () => {
                                     return group !== 'individual' &&
                                     <View style={styles.iconContainer} >
-                                        <TouchableNativeFeedback
+                                        <TouchableHighlight
                                             onPress={() => navigation.navigate('Add Broker Source')}
-                                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                         >
                                             <View style={styles.innerIconContainer}>
                                                 <MaterialIcons name="add" color='#000000' size={32} />
                                             </View>
-                                        </TouchableNativeFeedback>
+                                        </TouchableHighlight>
                                     </View>
                                 },
                             })} />

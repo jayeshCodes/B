@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View, Dimensions, ScrollView, TouchableNativeFeedback, Platform, ToastAndroid, RefreshControl } from 'react-native'
+import { FlatList, StyleSheet, Text, View, Dimensions, ScrollView, TouchableHighlight, Platform, ToastAndroid, RefreshControl } from 'react-native'
 import React, { useState, useEffect, useContext } from 'react'
 import { styleConstants } from '../../services/Constants'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -201,9 +201,9 @@ const Dashboard = () => {
             : <View>
               <View style={styles.buttonContainer}>
                 <View style={[styles.buttonOuter, { width: group === 'admin' ? '31.5%' : '48.5%' }]}>
-                  <TouchableNativeFeedback
+                  <TouchableHighlight
                     onPress={() => showDatePicker('fromDatePicker')}
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                    background={Platform.OS === 'android' ? TouchableHighlight : undefined}
                   >
                     <View style={[styles.button, { backgroundColor: fromDate === '' ? styleConstants.screenBackgroundColor : styleConstants.primaryColor }]}>
                       <DateTimePickerModal
@@ -221,12 +221,12 @@ const Dashboard = () => {
                         size={20}
                         onPress={() => { fromDate !== '' ? handleConfirm('', 'fromDatePicker') : null }} />
                     </View>
-                  </TouchableNativeFeedback>
+                  </TouchableHighlight>
                 </View>
                 <View style={[styles.buttonOuter, { width: group === 'admin' ? '31.5%' : '48.5%' }]}>
-                  <TouchableNativeFeedback
+                  <TouchableHighlight
                     onPress={() => showDatePicker('toDatePicker')}
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                    background={Platform.OS === 'android' ? TouchableHighlight : undefined}
                   >
                     <View
                       style={[styles.button, { backgroundColor: toDate === '' ? styleConstants.screenBackgroundColor : styleConstants.primaryColor }]}
@@ -247,7 +247,7 @@ const Dashboard = () => {
                         size={20}
                         onPress={() => { toDate !== '' ? handleConfirm('', 'toDatePicker') : null }} />
                     </View>
-                  </TouchableNativeFeedback>
+                  </TouchableHighlight>
                 </View>
                 {group === 'admin' && subBrokers.length > 0 &&
                   <ListMenu

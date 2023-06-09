@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableNativeFeedback, Pressable, Modal, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TouchableHighlight, Pressable, Modal, ScrollView } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import React, { useState } from 'react'
 import Checkbox from 'expo-checkbox'
@@ -32,15 +32,15 @@ const ListMenu = ({ dropListItems, mapArray, onSelectHandler, defaultTitle, widt
     return (
         <View style={[styles.container, { width: width ? width : '100%' }]}>
             <View style={styles.mainButtonContainer}>
-                <TouchableNativeFeedback
+                <TouchableHighlight
                     onPress={() => setDropListOpen(!dropListOpen)}
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                 >
                     <View style={[styles.mainButton, { backgroundColor: bgColor }]}>
                         <Text style={{ flex: 1, color: textColor }} ellipsizeMode='tail' numberOfLines={1}>{(dropListItems.length > 0 && nested) ? mapArray.filter((elem) => dropListItems.includes(elem[primaryFieldName])).map((item) => item[secondaryFieldName]).join(", ") : (dropListItems.length > 0 && !nested) ? dropListItems.join(", ") : defaultTitle}</Text>
                         <AntDesign name="caretdown" size={12} color={textColor ? textColor : "black"} />
                     </View>
-                </TouchableNativeFeedback>
+                </TouchableHighlight>
             </View>
             <Modal
                 visible={dropListOpen}
@@ -58,10 +58,10 @@ const ListMenu = ({ dropListItems, mapArray, onSelectHandler, defaultTitle, widt
                         <ScrollView>
                             {mapArray.map((item, index) => {
                                 return (
-                                    <TouchableNativeFeedback
+                                    <TouchableHighlight
                                         key={index}
                                         onPress={() => handleSelect(item)}
-                                        background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                        background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                     >
                                         <View style={styles.modalItem}>
                                             <Checkbox
@@ -72,30 +72,30 @@ const ListMenu = ({ dropListItems, mapArray, onSelectHandler, defaultTitle, widt
                                             />
                                             <Text style={styles.modalItemText}>{nested ? item[secondaryFieldName] : item}</Text>
                                         </View>
-                                    </TouchableNativeFeedback>
+                                    </TouchableHighlight>
                                 )
                             })}
                         </ScrollView>
                         <View style={styles.buttonsBar}>
                             <View style={styles.buttonBox}>
-                                <TouchableNativeFeedback
+                                <TouchableHighlight
                                     onPress={() => handleReset()}
-                                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                 >
                                     <View style={styles.buttonBoxInner}>
                                         <Text style={styles.buttonBoxText}>Clear All</Text>
                                     </View>
-                                </TouchableNativeFeedback>
+                                </TouchableHighlight>
                             </View>
                             <View style={styles.buttonBox}>
-                                <TouchableNativeFeedback
+                                <TouchableHighlight
                                     onPress={() => handleOK()}
-                                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                 >
                                     <View style={styles.buttonBoxInner}>
                                         <Text style={styles.buttonBoxText}>OK</Text>
                                     </View>
-                                </TouchableNativeFeedback>
+                                </TouchableHighlight>
                             </View>
                         </View>
                     </Pressable>

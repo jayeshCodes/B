@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableNativeFeedback, View, KeyboardAvoidingView, Platform, Alert, Image } from 'react-native';
+import { StyleSheet, TouchableHighlight, View, KeyboardAvoidingView, Platform, Alert, Image } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { useEffect, useRef, useContext, useState } from 'react';
 import { contextData } from '../../context/DataContext';
@@ -192,22 +192,22 @@ const BottomTabs = ({ navigation }) => {
       >
         <Tab.Screen name="Dashboard" component={Dashboard} options={{
           // headerLeft: () => (
-          //   <TouchableNativeFeedback onPress={() => navigation.navigate('Profile')}>
+          //   <TouchableHighlight onPress={() => navigation.navigate('Profile')}>
           //     <MaterialIcons name="account-circle" color='#000000' size={35} style={{ marginLeft: 10 }} />
-          //   </TouchableNativeFeedback>
+          //   </TouchableHighlight>
           // ),
         }} />
         <Tab.Screen name="Leads" component={Leads} options={{
           headerRight: () => (
             <View style={styles.iconContainer} >
-              <TouchableNativeFeedback
+              <TouchableHighlight
                 onPress={() => navigation.navigate('Add Lead')}
-                background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
               >
                 <View style={styles.innerIconContainer}>
                   <MaterialIcons name="add" color='#000000' size={32} />
                 </View>
-              </TouchableNativeFeedback>
+              </TouchableHighlight>
             </View>
           ),
         }} />

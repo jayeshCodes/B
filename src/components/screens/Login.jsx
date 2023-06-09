@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Image, TouchableNativeFeedback, Platform, KeyboardAvoidingView, Pressable, Alert } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Image, TouchableHighlight, Platform, KeyboardAvoidingView, Pressable, Alert } from 'react-native'
 import React, { useState, useContext } from 'react'
 import { styleConstants } from '../../services/Constants'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
@@ -143,14 +143,14 @@ const Login = ({ navigation }) => {
           </Pressable>
         </Text>
         <View style={styles.buttonOuter}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => signIn()}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight : TouchableHighlight}
           >
             <View style={styles.buttonContainer}>
               <Text style={{ color: '#ffffff', fontSize: 18, fontWeight: 'bold' }}>Login</Text>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
       </View>
       {/* </KeyboardAvoidingView> */}

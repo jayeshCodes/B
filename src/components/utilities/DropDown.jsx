@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList, TouchableNativeFeedback, Pressable, Dimensions, Modal } from 'react-native'
+import { StyleSheet, Text, View, FlatList, TouchableHighlight, Pressable, Dimensions, Modal } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import React, { useState } from 'react'
 import { styleConstants } from '../../services/Constants';
@@ -17,15 +17,15 @@ const DropDown = ({ dropListItems, onSelectHandler, width, defaultValue, primary
     return (
         <View style={[styles.container, { width: width ? width : '40%' }]}>
             <View style={styles.buttonContainer}>
-                <TouchableNativeFeedback
+                <TouchableHighlight
                     onPress={() => setDropListOpen(!dropListOpen)}
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                 >
                     <View style={[styles.button, { backgroundColor: bgColor }]}>
                         <Text style={{ flex: 1, color: textColor }} ellipsizeMode='tail' numberOfLines={1}>{defaultValue}</Text>
                         <AntDesign name="caretdown" size={12} color={textColor ? textColor : "black"} />
                     </View>
-                </TouchableNativeFeedback>
+                </TouchableHighlight>
             </View>
             <Modal
                 visible={dropListOpen}
@@ -42,14 +42,14 @@ const DropDown = ({ dropListItems, onSelectHandler, width, defaultValue, primary
                             data={dropListItems}
                             renderItem={({ item }) => {
                                 return (
-                                    <TouchableNativeFeedback
+                                    <TouchableHighlight
                                         onPress={() => handleSelect(item)}
-                                        background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                        background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                     >
                                         <View style={styles.itemBox}>
                                             <Text>{nested ? item[secondaryFieldName] : item}</Text>
                                         </View>
-                                    </TouchableNativeFeedback>
+                                    </TouchableHighlight>
                                 )
                             }}
                         />

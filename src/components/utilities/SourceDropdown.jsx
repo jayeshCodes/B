@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableNativeFeedback, Pressable, Modal, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TouchableHighlight, Pressable, Modal, ScrollView } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import React, { useState, useContext } from 'react'
 import Checkbox from 'expo-checkbox'
@@ -27,15 +27,15 @@ const ListMenu = ({ selectedSources, selectedBrokerSources, onSelectSources, onS
     return (
         <View style={[styles.container, { width: width ? width : '100%' }]}>
             <View style={styles.mainButtonContainer}>
-                <TouchableNativeFeedback
+                <TouchableHighlight
                     onPress={() => setDropListOpen(!dropListOpen)}
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                 >
                     <View style={[styles.mainButton, { backgroundColor: bgColor }]}>
                         <Text style={{ flex: 1, color: textColor }} ellipsizeMode='tail' numberOfLines={1}>{fieldTitle}</Text>
                         <AntDesign name="caretdown" size={12} color={textColor ? textColor : "black"} />
                     </View>
-                </TouchableNativeFeedback>
+                </TouchableHighlight>
             </View>
             <Modal
                 visible={dropListOpen}
@@ -53,10 +53,10 @@ const ListMenu = ({ selectedSources, selectedBrokerSources, onSelectSources, onS
                         <ScrollView>
                             {sourceArray.map((item, index) => {
                                 return (
-                                    <TouchableNativeFeedback
+                                    <TouchableHighlight
                                         key={index}
                                         onPress={() => handleSelect(item)}
-                                        background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                        background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                     >
                                         <View style={styles.modalItem}>
                                             <Checkbox
@@ -67,7 +67,7 @@ const ListMenu = ({ selectedSources, selectedBrokerSources, onSelectSources, onS
                                             />
                                             <Text style={styles.modalItemText}>{item}</Text>
                                         </View>
-                                    </TouchableNativeFeedback>
+                                    </TouchableHighlight>
                                 )
                             })}
                             {group !== "individual" &&
@@ -77,10 +77,10 @@ const ListMenu = ({ selectedSources, selectedBrokerSources, onSelectSources, onS
                             {group !== "individual" &&
                                 brokerSources.map((item, index) => {
                                     return (
-                                        <TouchableNativeFeedback
+                                        <TouchableHighlight
                                             key={index}
                                             onPress={() => onSelectBrokerSources(item.BSID, `${item.name} - ${item.companyName}`)}
-                                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                         >
                                             <View style={styles.modalItem}>
                                                 <Checkbox
@@ -91,30 +91,30 @@ const ListMenu = ({ selectedSources, selectedBrokerSources, onSelectSources, onS
                                                 />
                                                 <Text style={styles.modalItemText}>{`${item.name} - ${item.companyName}`}</Text>
                                             </View>
-                                        </TouchableNativeFeedback>
+                                        </TouchableHighlight>
                                     )
                                 })}
                         </ScrollView>
                         <View style={styles.buttonsBar}>
                             <View style={styles.buttonBox}>
-                                <TouchableNativeFeedback
+                                <TouchableHighlight
                                     onPress={() => handleReset()}
-                                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                 >
                                     <View style={styles.buttonBoxInner}>
                                         <Text style={styles.buttonBoxText}>Clear All</Text>
                                     </View>
-                                </TouchableNativeFeedback>
+                                </TouchableHighlight>
                             </View>
                             <View style={styles.buttonBox}>
-                                <TouchableNativeFeedback
+                                <TouchableHighlight
                                     onPress={() => setDropListOpen(false)}
-                                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                                 >
                                     <View style={styles.buttonBoxInner}>
                                         <Text style={styles.buttonBoxText}>OK</Text>
                                     </View>
-                                </TouchableNativeFeedback>
+                                </TouchableHighlight>
                             </View>
                         </View>
                     </Pressable>

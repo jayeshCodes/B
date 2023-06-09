@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Pressable, ScrollView, TouchableNativeFeedback, Platform, RefreshControl } from 'react-native'
+import { StyleSheet, Text, View, Pressable, ScrollView, TouchableHighlight, Platform, RefreshControl } from 'react-native'
 import { AntDesign, Feather, MaterialIcons } from '@expo/vector-icons'
 import React, { useState, useEffect, useContext } from 'react'
 import DateTimePickerModal from "react-native-modal-datetime-picker"
@@ -87,14 +87,14 @@ const Reminders = ({ navigation }) => {
             <View style={styles.pageHeaderBar}>
               <View style={styles.calendarButton}>
                 <View style={styles.addSubtractDateButtonContainer}>
-                  <TouchableNativeFeedback
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                  <TouchableHighlight
+                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                     onPress={() => updateReminderDate('subtract')}
                   >
                     <View style={styles.addSubtractDateButton}>
                       <AntDesign name="left" size={24} color={styleConstants.secondaryColor} />
                     </View>
-                  </TouchableNativeFeedback>
+                  </TouchableHighlight>
                 </View>
                 <Pressable
                   style={styles.calendarDateContainer}
@@ -111,14 +111,14 @@ const Reminders = ({ navigation }) => {
                   </Text>
                 </Pressable>
                 <View style={styles.addSubtractDateButtonContainer}>
-                  <TouchableNativeFeedback
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                  <TouchableHighlight
+                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                     onPress={() => updateReminderDate('add')}
                   >
                     <View style={styles.addSubtractDateButton}>
                       <AntDesign name="right" size={24} color={styleConstants.secondaryColor} />
                     </View>
-                  </TouchableNativeFeedback>
+                  </TouchableHighlight>
                 </View>
               </View>
             </View>
@@ -131,23 +131,23 @@ const Reminders = ({ navigation }) => {
               {currentCards.map((item, index) => {
                 return (
                   <View key={index} style={[styles.cardContainer, { marginTop: index === 0 ? 10 : 0 }]}>
-                    <TouchableNativeFeedback
+                    <TouchableHighlight
                       onPress={() => navigation.navigate('LeadProfileNavigator', { data: item })}
-                      background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                      background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                       useForeground={true}
                     >
                       <View>
                         <View style={styles.cardHeading}>
                           <Text style={styles.cardHeadingText}>{item.full_name}</Text>
-                          <TouchableNativeFeedback
+                          <TouchableHighlight
                             onPress={() => setSelectedContactItem(item)}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                             useForeground={true}
                           >
                             <View style={styles.moreButton}>
                               <MaterialIcons name="call" size={20} color="#ffffff" />
                             </View>
-                          </TouchableNativeFeedback>
+                          </TouchableHighlight>
                         </View>
                         <View style={styles.cardBody}>
                           <View style={styles.cardBodyRow}>
@@ -160,17 +160,17 @@ const Reminders = ({ navigation }) => {
                           </View>
                         </View>
                       </View>
-                    </TouchableNativeFeedback>
-                    <TouchableNativeFeedback
+                    </TouchableHighlight>
+                    <TouchableHighlight
                       onPress={() => setSelectedEditItem(item)}
-                      background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                      background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                     >
                       <View style={styles.editButton}>
                         <Text>Update</Text>
                         <View style={styles.emptySpace}></View>
                         <Feather name="edit" size={16} color="black" />
                       </View>
-                    </TouchableNativeFeedback>
+                    </TouchableHighlight>
                   </View>
                 )
               })}

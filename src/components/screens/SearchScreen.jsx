@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, TextInput, View, Pressable, TouchableNativeFeedback, Platform } from 'react-native'
+import { ScrollView, StyleSheet, Text, TextInput, View, Pressable, TouchableHighlight, Platform } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import React, { useState, useContext } from 'react'
 import { contextData } from '../../context/DataContext'
@@ -46,26 +46,26 @@ const SearchScreen = ({ navigation, route }) => {
             <ScrollView>
                 {((/\S/.test(searchText)) && !projects.includes(searchText)) &&
                     <View style={styles.optionsContainer}>
-                        <TouchableNativeFeedback
+                        <TouchableHighlight
                             onPress={() => navigation.navigate('Add Lead', { selectedProject: searchText })}
-                            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                         >
                             <View style={styles.innerContainer}>
                                 <Text style={{ flex: 1, textAlignVertical: 'center' }} ellipsizeMode='tail' numberOfLines={1}>{searchText}</Text>
                             </View>
-                        </TouchableNativeFeedback>
+                        </TouchableHighlight>
                     </View>}
                 {projectSuggestions.map((item, index) => {
                     return (
                         <View key={index} style={styles.optionsContainer}>
-                            <TouchableNativeFeedback
+                            <TouchableHighlight
                                 onPress={() => navigation.navigate('Add Lead', { selectedProject: item })}
-                                background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                                background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                             >
                                 <View style={styles.innerContainer}>
                                     <Text style={{ flex: 1, textAlignVertical: 'center' }} ellipsizeMode='tail' numberOfLines={1}>{item}</Text>
                                 </View>
-                            </TouchableNativeFeedback>
+                            </TouchableHighlight>
                         </View>
                     )
                 })}

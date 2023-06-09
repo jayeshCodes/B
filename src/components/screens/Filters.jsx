@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View, TouchableNativeFeedback, Platform, ScrollView, Dimensions, Pressable, TextInput, Keyboard, ToastAndroid } from 'react-native'
+import { FlatList, StyleSheet, Text, View, TouchableHighlight, Platform, ScrollView, Dimensions, Pressable, TextInput, Keyboard, ToastAndroid } from 'react-native'
 import React, { useState, useRef, useEffect, useContext } from 'react'
 import { styleConstants } from '../../services/Constants';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
@@ -103,9 +103,9 @@ const Filters = ({ route, navigation }) => {
     <View style={styles.mainContainer}>
       <View style={styles.buttonContainer}>
         <View style={styles.buttonOuter}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => showDatePicker('fromDatePicker')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.button, { backgroundColor: filterObject.dateStart === '' ? styleConstants.screenBackgroundColor : styleConstants.primaryColor }]}>
               <DateTimePickerModal
@@ -124,12 +124,12 @@ const Filters = ({ route, navigation }) => {
                 onPress={() => { filterObject.dateStart !== '' ? handleConfirm('', 'fromDatePicker') : null }}
               />
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
         <View style={styles.buttonOuter}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => showDatePicker('toDatePicker')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View
               style={[styles.button, { backgroundColor: filterObject.dateEnd === '' ? styleConstants.screenBackgroundColor : styleConstants.primaryColor }]}
@@ -151,12 +151,12 @@ const Filters = ({ route, navigation }) => {
                 onPress={() => { filterObject.dateEnd !== '' ? handleConfirm('', 'toDatePicker') : null }}
               />
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
         <View style={styles.buttonOuter}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => showDatePicker('reminderDatePicker')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View
               style={[styles.button, { backgroundColor: filterObject.calenderDate === '' ? styleConstants.screenBackgroundColor : styleConstants.primaryColor }]}
@@ -176,126 +176,126 @@ const Filters = ({ route, navigation }) => {
                 onPress={() => { filterObject.calenderDate !== '' ? handleConfirm('', 'reminderDatePicker') : null }}
               />
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
       </View>
       <View style={styles.mainContent}>
         <ScrollView style={styles.leftBar} showsVerticalScrollIndicator={false}>
           {/* {filterFields.map((item) => {
               return (
-                <TouchableNativeFeedback
+                <TouchableHighlight
                 key={item}
                   onPress={() => setSelectedList(item)}
-                  background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                  background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                 >
                   <View style={[styles.leftBarButton, { backgroundColor: selectedList === item ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
                     <Text></Text>
                     <View style={styles.indicator}></View>
                   </View>
-                </TouchableNativeFeedback>
+                </TouchableHighlight>
               )
             })} */}
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => setSelectedList('sortOrder')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'sortOrder' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Sort</Text>
               {filterObject.sortOrder !== "Date (Latest First)" && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('names')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'names' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Name</Text>
               {filterObject.names.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('mobiles')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'mobiles' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Mobile</Text>
               {filterObject.mobiles.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('source')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'source' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Source</Text>
               {filterObject.source.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
           {group !== "individual" &&
-            <TouchableNativeFeedback
+            <TouchableHighlight
               onPress={() => setSelectedList('brokerSources')}
-              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+              background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
             >
               <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'brokerSources' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
                 <Text>Broker Sources</Text>
                 {filterObject.brokerSources.length !== 0 && <View style={styles.indicator}></View>}
               </View>
-            </TouchableNativeFeedback>}
-          <TouchableNativeFeedback
+            </TouchableHighlight>}
+          <TouchableHighlight
             onPress={() => setSelectedList('propertyNames')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'propertyNames' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Project Name</Text>
               {filterObject.propertyNames.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('propertyAreas')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'propertyAreas' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Location</Text>
               {filterObject.propertyAreas.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('propertyTypes')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'propertyTypes' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Configuration</Text>
               {filterObject.propertyTypes.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('dealTypes')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'dealTypes' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Deal Type</Text>
               {filterObject.dealTypes.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
-          <TouchableNativeFeedback
+          </TouchableHighlight>
+          <TouchableHighlight
             onPress={() => setSelectedList('statuses')}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'statuses' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
               <Text>Status</Text>
               {filterObject.statuses.length !== 0 && <View style={styles.indicator}></View>}
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
           {group === "admin" &&
-            <TouchableNativeFeedback
+            <TouchableHighlight
               onPress={() => setSelectedList('assignedTo')}
-              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+              background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
             >
               <View style={[styles.leftBarButton, { backgroundColor: selectedList === 'assignedTo' ? styleConstants.screenBackgroundColor : '#ffffff' }]}>
                 <Text>Assigned To</Text>
                 {filterObject.assignedTo.length !== 0 && <View style={styles.indicator}></View>}
               </View>
-            </TouchableNativeFeedback>}
+            </TouchableHighlight>}
         </ScrollView>
         <View style={styles.rightBar}>
           {['names', 'mobiles', 'brokerSources', 'propertyNames', 'propertyAreas', 'assignedTo'].includes(selectedList) &&
@@ -324,9 +324,9 @@ const Filters = ({ route, navigation }) => {
               </Pressable>}
             </Pressable>}
           {selectedList !== 'sortOrder' &&
-            <TouchableNativeFeedback
+            <TouchableHighlight
               onPress={() => handleSelectAll()}
-              background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+              background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
             >
               <View style={styles.itemBox}>
                 <Checkbox
@@ -337,7 +337,7 @@ const Filters = ({ route, navigation }) => {
                 />
                 <Text style={styles.itemBoxText}>Select All</Text>
               </View>
-            </TouchableNativeFeedback>}
+            </TouchableHighlight>}
           <View
             style={{ flex: 1 }}
           // showsVerticalScrollIndicator={false}
@@ -347,9 +347,9 @@ const Filters = ({ route, navigation }) => {
                 data={route.params.filters.assignedTo}
                 keyExtractor={(_, index) => index}
                 renderItem={({ item }) => (
-                  <TouchableNativeFeedback
+                  <TouchableHighlight
                     onPress={() => filterObjectCallback(item.SBID, 'assignedTo')}
-                    background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                    background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                   >
                     <View style={[styles.itemBox, { display: (searchText === '' || item.name.toLowerCase().includes(searchText.toLowerCase())) ? 'flex' : 'none' }]}>
                       <Checkbox
@@ -360,7 +360,7 @@ const Filters = ({ route, navigation }) => {
                       />
                       <Text style={styles.itemBoxText}>{item.name}</Text>
                     </View>
-                  </TouchableNativeFeedback>
+                  </TouchableHighlight>
                 )}
               />
               :
@@ -369,14 +369,14 @@ const Filters = ({ route, navigation }) => {
                   data={sortData}
                   keyExtractor={(_, index) => index}
                   renderItem={({ item }) => (
-                    <TouchableNativeFeedback
+                    <TouchableHighlight
                       onPress={() => filterObjectCallback(item, 'sortOrder')}
-                      background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                      background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                     >
                       <View style={[styles.itemBox, { backgroundColor: filterObject.sortOrder === item ? styleConstants.primaryColor : 'transparent' }]}>
                         <Text style={filterObject.sortOrder === item && { color: '#ffffff' }}>{item}</Text>
                       </View>
-                    </TouchableNativeFeedback>
+                    </TouchableHighlight>
                   )}
                 />
                 // :
@@ -385,9 +385,9 @@ const Filters = ({ route, navigation }) => {
                 //     data={route.params.filters[selectedList].concat(route.params.filters.brokerSources)}
                 //     keyExtractor={(_, index) => index}
                 //     renderItem={({ item }) => (
-                //       <TouchableNativeFeedback
+                //       <TouchableHighlight
                 //         onPress={() => filterObjectCallback(item, selectedList)}
-                //         background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                //         background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                 //       >
                 //         <View style={[styles.itemBox, { display: (searchText === '' || item.toLowerCase().includes(searchText.toLowerCase())) ? 'flex' : 'none' }]}>
                 //           <Checkbox
@@ -398,7 +398,7 @@ const Filters = ({ route, navigation }) => {
                 //           />
                 //           <Text style={styles.itemBoxText}>{item}</Text>
                 //         </View>
-                //       </TouchableNativeFeedback>
+                //       </TouchableHighlight>
                 //     )}
                 //   />
                 :
@@ -406,9 +406,9 @@ const Filters = ({ route, navigation }) => {
                   data={route.params.filters[selectedList]}
                   keyExtractor={(_, index) => index}
                   renderItem={({ item }) => (
-                    <TouchableNativeFeedback
+                    <TouchableHighlight
                       onPress={() => filterObjectCallback(item, selectedList)}
-                      background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+                      background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
                     >
                       <View style={[styles.itemBox, { display: (searchText === '' || item.toLowerCase().includes(searchText.toLowerCase())) ? 'flex' : 'none' }]}>
                         <Checkbox
@@ -419,7 +419,7 @@ const Filters = ({ route, navigation }) => {
                         />
                         <Text style={styles.itemBoxText}>{item}</Text>
                       </View>
-                    </TouchableNativeFeedback>
+                    </TouchableHighlight>
                   )}
                 />}
           </View>
@@ -427,24 +427,24 @@ const Filters = ({ route, navigation }) => {
       </View>
       <View style={styles.buttonsBar}>
         <View style={styles.buttonBox}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => handleClearAll()}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={styles.buttonBoxInner}>
               <Text style={styles.buttonBoxText}>Clear All</Text>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
         <View style={styles.buttonBox}>
-          <TouchableNativeFeedback
+          <TouchableHighlight
             onPress={() => handleApply()}
-            background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : undefined}
+            background={Platform.OS === 'android' ? TouchableHighlight.SelectableBackground() : undefined}
           >
             <View style={styles.buttonBoxInner}>
               <Text style={styles.buttonBoxText}>OK</Text>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableHighlight>
         </View>
       </View>
     </View>
